@@ -1,0 +1,35 @@
+.DS_Store
+
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
+/vendor/
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+#Tambahan
+#-----------------
+
+assets/*
+!assets/css/styles.css
+!assets/css/tabel.css
+application/helpers/dompdf/
+application/system/
+robots.txt
+license.txt
+.htaccess
