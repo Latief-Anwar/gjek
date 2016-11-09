@@ -267,5 +267,29 @@
 			</div>
 		</div>			 
 	</div>
-
+	
+	 <div class="col-md-12 no-padding">
+		<div class="box collapsed-box">
+			<div class="box-header with-border">
+				<h3 class="box-title"><i class="fa fa-comments-o"></i> Saran saran</h3>
+				<div class="box-tools pull-right">
+					<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+				</div>
+			</div>
+			<div class="box-body">
+				<table class="table table-bordered" id="tabel-saran">
+					<thead>
+						<tr>
+						<th style="width:10px;">#id</th>
+						<th style="width:10px;"></th>
+						<th style="width:100px;"><i class="fa fa-user margin-r-5 text-red" title="Nama Pelanggan" data-toggle="tooltip"></i>Nama</th>
+						<th><i class="fa fa-comments-o margin-r-5 text-red" title="Saran" data-toggle="tooltip"></i> Saran</th>
+						</tr>
+                    </thead>
+					<tbody style="font-size:12px">
+                    </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </div>

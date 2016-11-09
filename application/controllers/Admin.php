@@ -68,6 +68,7 @@ class Admin extends Admin_Controller {
 		endforeach;
 		$this->statistics();
 		$this->render('admin/admin_view');
+		$this->load->view('admin/ajax_admin_view');
 	}
 	
 	protected function statistics()
@@ -77,13 +78,13 @@ class Admin extends Admin_Controller {
 		$this->data['TotalOrders'] = $this->Orders_model->countAllOrders()->row();
 		$this->data['GoodJek'] = $this->Orders_model->countAllGoodJekOrders($good='Good Ride')->row();
 		$this->data['GoodFood'] = $this->Orders_model->countAllGoodJekOrders($good='Good Food')->row();
-		$this->data['GoodMart'] = $this->Orders_model->countAllGoodJekOrders($good='Good Mart')->row();
+		$this->data['GoodMart'] = $this->Orders_model->countAllGoodJekOrders($good='Good Pick')->row();
 		
 		//history
 		$this->data['TotalOrdersHistory'] 	= $this->OrdersHistory_model->countAllOrders()->row();
 		$this->data['GoodJekHistory'] = $this->OrdersHistory_model->countAllGoodJekOrders($good='Good Ride')->row();
 		$this->data['GoodFoodHistory'] = $this->OrdersHistory_model->countAllGoodJekOrders($good='Good Food')->row();
-		$this->data['GoodMartHistory'] = $this->OrdersHistory_model->countAllGoodJekOrders($good='Good Mart')->row();
+		$this->data['GoodMartHistory'] = $this->OrdersHistory_model->countAllGoodJekOrders($good='Good Pick')->row();
 		
 	}
 	
@@ -293,11 +294,12 @@ class Admin extends Admin_Controller {
 		if (!empty($id))
 		{
 			$this -> load -> library('Datatable', array('model' => 'Customers_model', 'rowIdCol' => 'lu.id'));
+			$emailCustomer = $this->Customers_model->selectCustomerById($id)->row('email');
 			
-			$new_data = array('aktifasi' => 1);
+			$new_data = array('aktivasi' => 1);
 			$this->Customers_model->updateCustomer($id, $new_data);
 			$this->session->set_flashdata('message', 'Customer Account activated');
-			redirect('admin/allCustomers/'.$id.'','refresh');
+			redirect('admin/allCustomers/'.$emailCustomer.'','refresh');
 		}
 	}
 	
@@ -307,11 +309,12 @@ class Admin extends Admin_Controller {
 		if (!empty($id))
 		{
 			$this -> load -> library('Datatable', array('model' => 'Customers_model', 'rowIdCol' => 'lu.id'));
+			$emailCustomer = $this->Customers_model->selectCustomerById($id)->row('email');
 			
-			$new_data = array('aktifasi' => 0);
+			$new_data = array('aktivasi' => 0);
 			$this->Customers_model->updateCustomer($id, $new_data);
 			$this->session->set_flashdata('message', 'Customer Account de-activated');
-			redirect('admin/allCustomers/'.$id.'','refresh');
+			redirect('admin/allCustomers/'.$emailCustomer.'','refresh');
 		}else{show_404();}
 	}
 	
@@ -338,6 +341,33 @@ class Admin extends Admin_Controller {
 			$this->User_model->updateAdmin($id, $new_data);
 			$this->session->set_flashdata('message', 'Berhasil Ganti Password');
 			redirect('admin/profile','refresh');
+		}
+	}
+	
+	//saran
+	public function saranDataTable() 
+	{
+		//Important to NOT load the model and let the library load it instead.  
+        $this -> load -> library('Datatable', array('model' => 'Saran_model', 'rowIdCol' => 's.id'));
+        //format array is optional, but shown here for the sake of example
+        $json = $this -> datatable -> datatableJson();
+        $this -> output -> set_header("Pragma: no-cache");
+        $this -> output -> set_header("Cache-Control: no-store, no-cache");
+        $this -> output -> set_content_type('application/json') -> set_output(json_encode($json));
+    }
+	
+	public function hapusSaran($id=null)
+	{
+		$id = (int) $id;
+		if(!empty($id)){
+			$this->data['page_title'] = 'Hapus Saran Keramaian';
+			$this -> load -> library('Datatable', array('model' => 'Saran_model', 'rowIdCol' => 's.id'));
+			$this->Saran_model->delete($id);
+			$this->session->set_flashdata('message', 'Data berhasil dihapus');
+			redirect('admin','refresh');
+			
+		}else{
+			show_404();
 		}
 	}
 	

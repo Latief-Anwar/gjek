@@ -29,7 +29,7 @@ assets/*
 !assets/css/styles.css
 !assets/css/tabel.css
 application/helpers/dompdf/
-application/system/
+system/
 robots.txt
 license.txt
 .htaccess

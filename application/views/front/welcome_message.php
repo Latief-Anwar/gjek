@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="<?=base_url('assets/templates/css/styles.css')?>" />
 <!-- Font Awesome -->
 <link href="<?=base_url('assets/templates/font/css/font-awesome.min.css')?>" rel="stylesheet">
+<link rel="shortcut icon" href="<?php echo base_url('assets/brand/icon.ico')?>"/>
 </head>
 
 <body>
@@ -536,5 +537,20 @@
 <script src="<?=base_url('assets/templates/contact/contact_me.js')?>"></script>
 <script src="<?=base_url('assets/templates/js/custom.js')?>" type="text/javascript"></script> 
 <script src="<?=base_url('assets/templates/js/owl-carousel/owl.carousel.js')?>"></script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/582259c627d4c061e9ece83b/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
 </body>
 </html>

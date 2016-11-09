@@ -46,17 +46,17 @@
 							<div class="box-body box-profile no-padding ">
 								<h3 class="profile-username text-center"><i class="fa fa-area-chart"></i> All Statistics</h3>
 								<ul class="list-group list-group-unbordered">
-									<li class="list-group-item"><i class="fa fa-motorcycle text-blue"></i> Good-Jek
+									<li class="list-group-item"><i class="fa fa-motorcycle text-blue"></i> Good-Ride
 										<p class="pull-right">
 										<?=$GoodJek->total_orders?> kali order, biaya Rp. <?= number_format($GoodJek->total_biaya ,0,',','.');?>,-
 										</p>
 									</li>
-									<li class="list-group-item"><i class="fa fa-cutlery text-green margin-r-5"></i> Good-food
+									<li class="list-group-item"><i class="fa fa-cutlery text-green margin-r-5"></i> Good-Food
 										<p class="pull-right">
 										<?=$GoodFood->total_orders?> kali order, biaya Rp. <?= number_format($GoodFood->total_biaya ,0,',','.');?>,-
 										</p>
 									</li>
-									<li class="list-group-item"><i class="fa fa-shopping-cart text-orange margin-r-5"></i> Good-mart
+									<li class="list-group-item"><i class="fa fa-shopping-cart text-orange margin-r-5"></i> Good-Pick
 										<p class="pull-right">
 										<?=$GoodMart->total_orders?> kali order, biaya Rp. <?= number_format($GoodMart->total_biaya ,0,',','.');?>,-
 										</p>
