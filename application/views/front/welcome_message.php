@@ -47,12 +47,14 @@
       <!--/.navbar-header-->
       <div id="main-nav" class="collapse navbar-collapse">
         <ul class="nav navbar-nav" id="mainNav">
-          <li class="active" id="firstLink"><a href="#home" class="scroll-link">Home</a></li>
+          <li class="active" id="firstLink"><a href="#home" class="scroll-link">Promo</a></li>
           <li><a href="#Features" class="scroll-link">Features</a></li>
           <li><a href="#aboutUs" class="scroll-link">About Us</a></li>
           <li><a href="#work" class="scroll-link">Events</a></li>
           <!--<li><a href="#plans" class="scroll-link">Fees</a></li>-->
           <li><a href="#team" class="scroll-link">Management</a></li>
+          <li><a href="<?=base_url('gabung')?>" class="scroll-link">Gabung</a></li>
+          <li><a href="<?=base_url('faq')?>" class="scroll-link">FAQ</a></li>
           <li><a href="<?=base_url('privacy')?>" class="scroll-link">Privacy</a></li>
         </ul>
       </div>
@@ -500,9 +502,9 @@
 
              <div class="col-md-3">
              	<div class="col">
-                    <h4>Latest News</h4>
+                    <h4>FAQ</h4>
                     <p>
-                    Pre relase Good-jek di Kota Pangkalpinang Bangka Belitung.
+                    Temukan hal-hal penting yang sering ditanyakan pengguna Good-Jek
                     <br><br>
                     <a href="#" class="btn">Selengkapnya!</a>
                     </p>

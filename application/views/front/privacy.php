@@ -30,6 +30,8 @@
 <link rel="stylesheet" href="<?=base_url('assets/templates/css/styles.css')?>" />
 <!-- Font Awesome -->
 <link href="<?=base_url('assets/templates/font/css/font-awesome.min.css')?>" rel="stylesheet">
+
+<link rel="shortcut icon" href="<?php echo base_url('assets/brand/icon.ico')?>"/>
 </head>
 
 <body>
@@ -53,6 +55,8 @@
           <!--<li><a href="#plans" class="scroll-link">Fees</a></li>-->
           <li><a href="<?=base_url()?>#team" class="scroll-link">Management</a></li>
           <li><a href="<?=base_url()?>#contactUs" class="scroll-link">Contact Us</a></li>
+		  <li><a href="<?=base_url('gabung')?>" class="scroll-link">Gabung</a></li>
+          <li><a href="<?=base_url('faq')?>" class="scroll-link">FAQ</a></li>
           <li id="firstLink" class="active"><a href="<?=base_url('privacy')?>">Privacy</a></li>
         </ul>
       </div>
@@ -224,9 +228,9 @@ Syarat dan Ketentuan
 
              <div class="col-md-3">
              	<div class="col">
-                    <h4>Latest News</h4>
+                    <h4>FAQ</h4>
                     <p>
-                    Pre relase Good-jek di Kota Pangkalpinang Bangka Belitung.
+                    Temukan hal-hal penting yang sering ditanyakan pengguna Good-Jek
                     <br><br>
                     <a href="#" class="btn">Selengkapnya!</a>
                     </p>
