@@ -13,11 +13,11 @@
                       <th></th><!-- oh.good visible false in ajax-->
                       <th></th><!-- oh.username visible false -->
                       <th></th>
-                      <th><small><i class="fa fa-user margin-r-5 text-red" title="Nama Pemesan" data-toggle="tooltip"></i></small></th>
+                      <th><small> Nama</small></th>
                       <th><small><i class="fa fa-tablet margin-r-5 text-red" title="No HP Pemesan" data-toggle="tooltip"></i> Hp</small></th>
                       <th><small><i class="fa fa-map-marker margin-r-5 text-red" title="Alamat Asal" data-toggle="tooltip"></i> Asal</small></th>
                       <th><small><i class="fa fa-map-marker margin-r-5 text-red" title="Alamat Tujuan" data-toggle="tooltip"></i> Tujuan</small></th>
-                      <th><small><i class="fa fa-shopping-cart margin-r-5 text-red" title="Daftar Barang Pesanan" data-toggle="tooltip"></i> Pesanan</small></th>
+                      <th><small> Pesanan</small></th>
                       <th><small><i class="fa fa-clock-o margin-r-5 text-red" title="Waktu Pemesanan" data-toggle="tooltip"></i> Pesan</small></th>
                       <th><small><i class="fa fa-clock-o margin-r-5 text-red" title="Waktu Sampai" data-toggle="tooltip"></i> Sampai</small></th>
                       <th><center><small><i class="fa fa-question-circle margin-r-5 text-red" title="Status pengiriman" data-toggle="tooltip"></i></small></center></th>
