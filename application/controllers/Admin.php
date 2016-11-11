@@ -15,6 +15,7 @@ class Admin extends Admin_Controller {
 	{
 		$this -> load -> library('Datatable', array('model' => 'OrdersHistory_model', 'rowIdCol' => 'oh.id'));
 		
+		/*
 		//ambil dari tabel pemesanan, kemudian dimasukan ke tabel login_user
 		$query	= $this->User_model->selectAllDrivers()->result();
 		foreach($query as $row):
@@ -32,7 +33,7 @@ class Admin extends Admin_Controller {
 	
 		$allOrders = $this->Orders_model->selectAllOrders()->result();
 		foreach($allOrders as $row):
-			$data_orders_konyol = array(
+			$data_orders = array(
 				'id'			=> $row->id,
 				'username' 		=> $row->username,
 				'name' 			=> $row->name,
@@ -49,7 +50,7 @@ class Admin extends Admin_Controller {
 				'latitude' 		=> $row->latitude,
 				'longitude' 	=> $row->longitude,
 				'lat' 			=> $row->lat,
-				'long' 			=> $row->long,
+				'lon' 			=> $row->lon,
 				'driver' 		=> $row->driver,
 				'jarak' 		=> $row->jarak,
 				'biaya' 		=> $row->biaya,
@@ -61,11 +62,12 @@ class Admin extends Admin_Controller {
 			
 			if (!in_array($row->id, $AllOrdersHistoryId))
 			{
-				$this->OrdersHistory_model->insert($data_orders_konyol);
+				$this->OrdersHistory_model->insert($data_orders);
 			}else{
-				$this->OrdersHistory_model->update($row->id, $data_orders_konyol);
+				$this->OrdersHistory_model->update($row->id, $data_orders);
 			}
 		endforeach;
+		**/
 		$this->statistics();
 		$this->render('admin/admin_view');
 		$this->load->view('admin/ajax_admin_view');
