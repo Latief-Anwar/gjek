@@ -51,9 +51,9 @@
         	{ 
 				data: "r.status",
 				"render": function ( data, type, full, meta ) {
-					if (data ==='0'){
+					if (data ==='tutup'){
 						return '<a href="<?=base_url('Restaurants/activateRestaurant')?>/'+full.r.id+'" class="text-red" title="Klik untuk merubah manual" data-toggle="tooltip">Tutup</a>';
-					}else if (data ==='1'){
+					}else if (data ==='buka'){
 						return '<a href="<?=base_url('Restaurants/deactivateRestaurant')?>/'+full.r.id+'" class="text-green" title="Klik untuk merubah manual" data-toggle="tooltip">Buka</a>';
 					}
 				}

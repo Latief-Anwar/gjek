@@ -42,6 +42,8 @@ class Restaurants extends Admin_Controller {
 		$this->form_validation->set_rules('hari_buka[]','Hari Buka','required');
 		//$this->form_validation->set_rules('hari_libur','Hari Libur','trim');
 		$this->form_validation->set_rules('keterangan','Keterangan','trim');
+		$this->form_validation->set_rules('latitude','Latitude','trim|numeric|required');
+		$this->form_validation->set_rules('longitude','Longitude','trim|numeric|required');
 		
 			if($this->form_validation->run()===TRUE)
 			{
@@ -68,7 +70,9 @@ class Restaurants extends Admin_Controller {
 					  'jam_tutup' => $this->input->post('jam_tutup'),
 					  'hari_buka' => implode( ',' , $this->input->post('hari_buka')),
 					  'keterangan' => $this->input->post('keterangan'),
-					  'status' => '1',
+					  'latitude' => $this->input->post('latitude'),
+					  'longitude' => $this->input->post('longitude'),
+					  'status' => 'buka',
 					  'foto' => base_url('assets/images/restaurants').'/'.$upload['raw_name'].$upload['file_ext'],
 					);
 					
@@ -177,29 +181,12 @@ class Restaurants extends Admin_Controller {
 		redirect('Restaurants/index/'.$id_restaurant,'refresh');
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public function activateRestaurant($id = null)
 	{
 		$id = (int) $id;
 		if (!empty($id))
 		{
-			$new_data = array('status' => 1);
+			$new_data = array('status' => 'buka');
 			$this->Restaurants_model->updateRestaurant($id, $new_data);
 			$this->session->set_flashdata('message', 'Restaurant Activated');
 			redirect('Restaurants','refresh');
@@ -211,7 +198,7 @@ class Restaurants extends Admin_Controller {
 		$id = (int) $id;
 		if (!empty($id))
 		{
-			$new_data = array('status' => 0);
+			$new_data = array('status' => 'tutup');
 			$this->Restaurants_model->updateRestaurant($id, $new_data);
 			$this->session->set_flashdata('message', 'Restaurant De-activated');
 			redirect('Restaurants','refresh');

@@ -111,6 +111,18 @@
 							<?php echo form_error('keterangan','<small style="color:red">','</small>');?>
 							</div>
 						</div>
+						<div class="form-group form-group-sm">
+							<div class="col-sm-12">
+								<?php echo form_input('latitude','',array('class'=>'form-control','placeholder'=>'Latitude','required'=>'required'));?>
+								<?php echo form_error('latitude','<small style="color:red">','</small>');?>
+							</div>
+						</div>
+						<div class="form-group form-group-sm">
+							<div class="col-sm-12">
+							<?php echo form_input('longitude','',array('class'=>'form-control','placeholder'=>'Longitude','required'=>'required'));?>
+							<?php echo form_error('longitude','<small style="color:red">','</small>');?>
+							</div>
+						</div>
 						
 						<div class="form-group form-group-sm">
 							<div class="col-sm-12">
