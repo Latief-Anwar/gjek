@@ -31,6 +31,7 @@
             <li class="<?php if ($this->uri->segment(2) == 'allCustomers') {echo 'active';}?>"><a href="<?=base_url('admin/allCustomers')?>">Customers </a></li>
             <li class="<?php if ($this->uri->segment(2) == 'allDrivers') {echo 'active';}?>"><a href="<?=base_url('admin/allDrivers')?>">Drivers </a></li>
             <li class="<?php if ($this->uri->segment(1) == 'Restaurants') {echo 'active';}?>"><a href="<?=base_url('Restaurants')?>">Restaurants </a></li>
+            <li class="<?php if ($this->uri->segment(1) == 'informasi') {echo 'active';}?>"><a href="<?=base_url('informasi')?>">Info </a></li>
           </ul>
         </div>
         <div class="navbar-custom-menu">
